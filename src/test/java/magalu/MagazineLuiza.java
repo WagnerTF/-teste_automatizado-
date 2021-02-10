@@ -21,7 +21,7 @@ public class MagazineLuiza {
 	@Before
 	public void setUp() throws Exception {
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\WAGNER\\Documents\\CURSOS JAVA\\chrome_driver\\chromedriver.exe");
+				"C:\\Users\\Documents\\chrome_driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://sacola.magazineluiza.com.br/#/cliente/login/?next=https%3A//www.magazineluiza.com.br/acompanhamento/&origin=magazineluiza");
 		assertTrue("Titulo da página difere do esperado",driver.getTitle().contentEquals("Sacola de compras - Magazine Luiza"));
@@ -47,19 +47,16 @@ public class MagazineLuiza {
 		WebElement element = driver.findElement(By.id("LoginBox-form")).findElement(By.name("login"));
 
 		// Insere dados no elemento "usuario".
-		element.sendKeys("driana.matematica@gmail.com");
+		element.sendKeys("teste@gmail.com");
 
 		// Atribui ao objeto “element” o elemento de atributo "name" igual a "senha".
 		element = driver.findElement(By.name("password"));
 
 		// Insere dados no elemento "senha".
-		element.sendKeys("300890");
+		element.sendKeys("teste1234");
 
 		// Clica no botão "OK" e submete os dados para concluir o login.
 		driver.findElement(By.id("LoginBox-form")).findElement(By.className("LoginBox-form-continue")).click();
-
+		
 	}
-
 }
-
-// https://www.devmedia.com.br/introducao-aos-testes-funcionais-automatizados-com-junit-e-selenium-webdriver/28037
